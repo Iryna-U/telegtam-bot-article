@@ -17,4 +17,4 @@ export BOT_DB_USERNAME='prod_tb_db_user'
 export BOT_DB_PASSWORD='root'
 
 # Start new deployment
-docker-compose up --build
+docker-compose up --build -d
