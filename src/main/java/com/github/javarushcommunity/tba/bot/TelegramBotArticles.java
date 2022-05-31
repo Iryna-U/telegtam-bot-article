@@ -2,6 +2,8 @@ package com.github.javarushcommunity.tba.bot;
 
 import com.github.javarushcommunity.tba.command.CommandContainer;
 import com.github.javarushcommunity.tba.service.SendBotMessageServiceImpl;
+import com.github.javarushcommunity.tba.service.TelegramUserService;
+import com.github.javarushcommunity.tba.service.TelegramUserServiceImpl;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
@@ -29,8 +31,8 @@ public class TelegramBotArticles extends TelegramLongPollingBot {
 
     private final CommandContainer commandContainer;
 
-    public TelegramBotArticles() {
-        this.commandContainer = new CommandContainer(new SendBotMessageServiceImpl(this));
+    public TelegramBotArticles(TelegramUserService telegramUserService) {
+        this.commandContainer = new CommandContainer(new SendBotMessageServiceImpl(this), telegramUserService);
     }
 
 //   це і є точка входу, куди надходитимуть повідомлення від користувачів. Звідси йтиме вся нова логіка

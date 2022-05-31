@@ -1,5 +1,6 @@
 package com.github.javarushcommunity.tba.command;
 
+import com.github.javarushcommunity.tba.service.TelegramUserService;
 import org.junit.jupiter.api.DisplayName;
 
 import static com.github.javarushcommunity.tba.command.CommandName.START;
@@ -20,6 +21,6 @@ class StartCommandTest extends AbstractCommandTest {
 
     @Override
     Command getCommand() {
-        return new StartCommand(sendBotMessageService);
+        return new StartCommand(sendBotMessageService, telegramUserService);
     }
 }

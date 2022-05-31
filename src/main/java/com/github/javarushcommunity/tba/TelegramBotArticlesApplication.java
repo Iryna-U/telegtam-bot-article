@@ -10,5 +10,4 @@ public class TelegramBotArticlesApplication {
 		SpringApplication.run(TelegramBotArticlesApplication.class, args);
 	}
 
-
 }

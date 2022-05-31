@@ -1,6 +1,7 @@
 package com.github.javarushcommunity.tba.command;
 
 import com.github.javarushcommunity.tba.service.SendBotMessageService;
+import com.github.javarushcommunity.tba.service.TelegramUserService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.mockito.Mockito;
@@ -16,7 +17,9 @@ class CommandContainerTest {
     @BeforeEach
     public void init() {
         SendBotMessageService sendBotMessageService = Mockito.mock(SendBotMessageService.class);
-        commandContainer = new CommandContainer(sendBotMessageService);
+        TelegramUserService telegramUserService = Mockito.mock(TelegramUserService.class);
+
+        commandContainer = new CommandContainer(sendBotMessageService, telegramUserService);
     }
 
     @Test
