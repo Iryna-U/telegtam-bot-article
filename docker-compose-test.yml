@@ -14,7 +14,7 @@ services:
       MYSQL_DATABASE: 'dev_tb_db'
     ports:
       # <Port exposed> : < MySQL Port running inside container>
-      - '3307:3306'
+      - '3306:3306'
     expose:
       # Opens port 3306 on the container
       - '3306'
