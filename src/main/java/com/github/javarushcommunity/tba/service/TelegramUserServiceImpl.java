@@ -2,10 +2,9 @@ package com.github.javarushcommunity.tba.service;
 
 import com.github.javarushcommunity.tba.repository.TelegramUserRepository;
 import com.github.javarushcommunity.tba.repository.entity.TelegramUser;
-import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.Optional;
+import org.springframework.stereotype.Service;
 
 /**
  * Implementation of {@link TelegramUserService} interface.
@@ -14,7 +13,7 @@ import java.util.Optional;
 public class TelegramUserServiceImpl implements TelegramUserService {
     private final TelegramUserRepository telegramUserRepository;
 
-    public TelegramUserServiceImpl(TelegramUserRepository telegramUserRepository){
+    public TelegramUserServiceImpl(TelegramUserRepository telegramUserRepository) {
         this.telegramUserRepository = telegramUserRepository;
     }
 

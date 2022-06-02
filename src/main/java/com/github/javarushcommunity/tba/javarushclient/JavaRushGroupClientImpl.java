@@ -2,12 +2,12 @@ package com.github.javarushcommunity.tba.javarushclient;
 
 import com.github.javarushcommunity.tba.javarushclient.dto.GroupDiscussionInfo;
 import com.github.javarushcommunity.tba.javarushclient.dto.GroupInfo;
+import java.util.List;
 import kong.unirest.GenericType;
 import kong.unirest.Unirest;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-import java.util.List;
 /**
  * Implementation of the {@link JavaRushGroupClient} interface.
  */

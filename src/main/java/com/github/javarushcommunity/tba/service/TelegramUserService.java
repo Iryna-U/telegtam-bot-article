@@ -1,10 +1,9 @@
 package com.github.javarushcommunity.tba.service;
 
 import com.github.javarushcommunity.tba.repository.entity.TelegramUser;
-import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.Optional;
+import org.springframework.stereotype.Service;
 
 /**
  * {@link Service} for handling {@link TelegramUser} entity.

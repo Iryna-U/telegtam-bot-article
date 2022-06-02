@@ -1,13 +1,13 @@
 package com.github.javarushcommunity.tba.javarushclient;
 
+import static java.util.Objects.nonNull;
+
 import com.github.javarushcommunity.tba.javarushclient.dto.GroupFilter;
 import com.github.javarushcommunity.tba.javarushclient.dto.GroupInfoType;
-import lombok.Builder;
-import lombok.Getter;
-
 import java.util.HashMap;
 import java.util.Map;
-import static java.util.Objects.nonNull;
+import lombok.Builder;
+import lombok.Getter;
 
 /**
  * Request arguments for group requests.
@@ -31,19 +31,19 @@ public class GroupRequestArgs {
 
     public Map populateQueries() {
         Map queries = new HashMap<>();
-        if(nonNull(query)) {
+        if (nonNull(query)) {
             queries.put("query", query);
         }
-        if(nonNull(type)) {
+        if (nonNull(type)) {
             queries.put("type", type);
         }
-        if(nonNull(filter)) {
+        if (nonNull(filter)) {
             queries.put("filter", filter);
         }
-        if(nonNull(offset)) {
+        if (nonNull(offset)) {
             queries.put("offset", offset);
         }
-        if(nonNull(limit)) {
+        if (nonNull(limit)) {
             queries.put("limit", limit);
         }
         return queries;

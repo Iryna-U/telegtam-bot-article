@@ -1,5 +1,7 @@
 package com.github.javarushcommunity.tba.bot;
 
+import static com.github.javarushcommunity.tba.command.CommandName.NO;
+
 import com.github.javarushcommunity.tba.command.CommandContainer;
 import com.github.javarushcommunity.tba.service.SendBotMessageServiceImpl;
 import com.github.javarushcommunity.tba.service.TelegramUserService;
@@ -7,16 +9,21 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
 import org.telegram.telegrambots.meta.api.objects.Update;
-import static com.github.javarushcommunity.tba.command.CommandName.NO;
 
 @Component
 public class TelegramBotArticles extends TelegramLongPollingBot {
-    public static String COMMAND_PREFIX = "/";
+    private static String COMMAND_PREFIX = "/";
+    private final CommandContainer commandContainer;
 
     @Value("${bot.username}")
     private String username;
     @Value("${bot.token}")
     private String token;
+
+    public TelegramBotArticles(TelegramUserService telegramUserService) {
+        this.commandContainer = new CommandContainer(new SendBotMessageServiceImpl(this),
+                telegramUserService);
+    }
 
     @Override
     public String getBotUsername() {
@@ -28,14 +35,9 @@ public class TelegramBotArticles extends TelegramLongPollingBot {
         return token;
     }
 
-    private final CommandContainer commandContainer;
-
-    public TelegramBotArticles(TelegramUserService telegramUserService) {
-        this.commandContainer = new CommandContainer(new SendBotMessageServiceImpl(this), telegramUserService);
-    }
-
-//   це і є точка входу, куди надходитимуть повідомлення від користувачів. Звідси йтиме вся нова логіка
-//   після отримання оновлень
+    //   це і є точка входу, куди надходитимуть повідомлення від користувачів.
+    //   Звідси йтиме вся нова логіка
+    //   після отримання оновлень
     @Override
     public void onUpdateReceived(Update update) {
         if (update.hasMessage() && update.getMessage().hasText()) {

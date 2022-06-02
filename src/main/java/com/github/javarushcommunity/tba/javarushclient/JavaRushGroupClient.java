@@ -2,7 +2,6 @@ package com.github.javarushcommunity.tba.javarushclient;
 
 import com.github.javarushcommunity.tba.javarushclient.dto.GroupDiscussionInfo;
 import com.github.javarushcommunity.tba.javarushclient.dto.GroupInfo;
-
 import java.util.List;
 
 /**
