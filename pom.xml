@@ -17,6 +17,7 @@
 	<properties>
 		<java.version>11</java.version>
 		<telegrambots.spring.boot.starter.version>6.0.1</telegrambots.spring.boot.starter.version>
+		<unirest.version>3.13.10</unirest.version>
 	</properties>
 
 	<dependencies>
@@ -59,6 +60,13 @@
 			<artifactId>telegrambots-spring-boot-starter</artifactId>
 			<version>${telegrambots.spring.boot.starter.version}</version>
 		</dependency>
+
+		<dependency>
+			<groupId>com.konghq</groupId>
+			<artifactId>unirest-java</artifactId>
+			<version>${unirest.version}</version>
+		</dependency>
+
 
 	</dependencies>
 
